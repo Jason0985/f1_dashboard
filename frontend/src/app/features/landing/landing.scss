@@ -1,0 +1,126 @@
+.landing-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+.background-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+  }
+
+  .shape-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    top: -100px;
+    left: -100px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .shape-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    bottom: -100px;
+    right: -50px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  .shape-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    top: 40%;
+    right: 20%;
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, -30px); }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+
+  mat-icon {
+    font-size: 1.1rem;
+    height: 1.1rem;
+    width: 1.1rem;
+    color: #ff416c;
+  }
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem;
+  line-height: 1.1;
+
+  @media (max-width: 600px) {
+    font-size: 2.5rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #ff416c, #4facfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2.5rem;
+}
+
+.cta-button {
+  font-size: 1.1rem;
+  padding: 0.5rem 2rem;
+  height: 56px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 30px rgba(255, 65, 108, 0.4);
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
